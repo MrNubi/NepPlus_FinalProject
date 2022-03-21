@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
@@ -45,14 +46,30 @@ class LogInActivity : BaseActivity() {
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_find_pw, null)
             val mBuilder = AlertDialog.Builder(mContext)
                 .setView(mDialogView)
-                .setTitle("기존에 로그인하던 아이디가 있습니다.")
+                .setTitle("이메일을 입력해 주세요")
 
             val alertDialog = mBuilder.show()
             alertDialog.findViewById<Button>(R.id.btn_findingPw)?.setOnClickListener {
+                auth = Firebase.auth
+
+                val emailAD : String =  alertDialog.findViewById<EditText>(R.id.edt_FindPwEmail)?.text.toString()
+
+                if(emailAD == ""){
+                    Toast.makeText(mContext, "이메일을 입력해 주세요", Toast.LENGTH_SHORT).show()
+                }
+                if(emailAD != "") {
+                    auth.sendPasswordResetEmail(emailAD).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "비밀번호 변경 메일을 전송했습니다", Toast.LENGTH_LONG).show()
+                            alertDialog.dismiss()
+                        } else {
+                            Toast.makeText(this, task.exception.toString(), Toast.LENGTH_LONG)
+                                .show()
+                        }
+                    }
 
 
-
-//                Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_LONG).show()
+                }
 
 //                startActivity(Intent(this, MainActivity::class.java))
 //                finish()
