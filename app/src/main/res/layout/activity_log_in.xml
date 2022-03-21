@@ -6,16 +6,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sellected_color"
     android:orientation="vertical"
-    android:gravity="center"
+
+    android:paddingTop="20dp"
     tools:context=".Auth.LogInActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="150dp">
+        <ImageView
+            android:src="@drawable/cloud"
+            android:layout_width="80dp"
+            android:layout_height="80dp"></ImageView>
+
+        <TextView
+
+            android:text="Sign Up"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:paddingHorizontal="30dp"
+
+
         android:orientation="vertical">
 
         <EditText
+            android:textColorHint="@color/white"
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -25,10 +55,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="#999999"
+            android:background="@color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_height="0.5dp"/>
+            android:layout_height="2dp"/>
 
 
         <EditText
@@ -38,28 +68,33 @@
             android:inputType="textPassword"
             android:hint="password"
             style="@style/AuthEditText"
+            android:textColorHint="@color/white"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="#999999"
+            android:background="@color/white"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_height="0.5dp"/>
+            android:layout_height="2dp"/>
 
         <Button
+            android:background="@android:color/transparent"
+            android:textSize="30dp"
             android:id="@+id/btn_LogIn"
             android:layout_margin="20dp"
-            android:text="로그인하기"
+            android:text="LogIn"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="60dp"/>
 
         <Button
-            android:id="@+id/btn_SignIn"
+            android:background="@android:color/transparent"
+            android:textSize="30dp"
+            android:id="@+id/btn_MoveToSignIn"
             android:layout_marginHorizontal="20dp"
-            android:text="회원가입"
+            android:text="Sign up"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="60dp"/>
 
 
     </LinearLayout>

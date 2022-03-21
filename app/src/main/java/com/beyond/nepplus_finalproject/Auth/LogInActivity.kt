@@ -49,8 +49,8 @@ class LogInActivity : BaseActivity() {
 
 
         }
-        binding.btnSignIn.setOnClickListener {
-            val intent = Intent(mContext, MainActivity::class.java)
+        binding.btnMoveToSignIn.setOnClickListener {
+            val intent = Intent(mContext, SignUpActivity::class.java)
 
             startActivity(intent)
         }
