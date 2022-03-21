@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/black_pattern_background"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/nepp_logo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"></ImageView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="50dp"></LinearLayout>
+        <ImageView
+            android:src="@drawable/bell_icon"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"></ImageView>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/img_men"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="홍길동님 안녕하세요"></TextView>
+            <TextView
+                android:textColor="@color/white"
+
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="#안드로이드"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/user_profile_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자기소개"></TextView>
+        </LinearLayout>
+        <LinearLayout
+
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/document_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이력관리"></TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/heart_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="찜한 목록"></TextView>
+        </LinearLayout>
+   </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/progress_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"></ImageView>
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진행현황"></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"></TextView>
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지원"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#AAA8A8"
+            android:layout_marginVertical="20dp"></LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+
+
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"></TextView>
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="진행"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#AAA8A8"
+            android:layout_marginVertical="20dp"></LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"></TextView>
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="완료"></TextView>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#EDE9E9"
+        android:paddingHorizontal="20dp">
+
+        <TextView
+            android:textSize="25dp"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="진행중인 프로젝트"></TextView>
+
+        <LinearLayout
+            android:background="@drawable/background"
+            android:paddingHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+               android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#8A8989"
+                android:text="주 NePP"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="집앞까지 찾아오는 세탁소 플랫폼 '우리집 세탁소'"></TextView>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"></LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="지원역할"></TextView>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    ></LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안드로이드"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="마감일"></TextView>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    ></LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019.12.12"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp">
+
+                <Button
+               android:background="@android:color/transparent"
+                    android:text="상세정보보기"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Button>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"></LinearLayout>
+
+
+                <Button
+
+                    android:text="미팅내용"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Button>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/bottom_nav_home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="홈"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginHorizontal="30dp"
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/bottom_nav_paper"
+                android:layout_width="50dp"
+                android:layout_height="50dp"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="광고"></TextView>
+        </LinearLayout>
+        <LinearLayout
+
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:src="@drawable/bottom_nav_my_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"></ImageView>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="my"></TextView>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
