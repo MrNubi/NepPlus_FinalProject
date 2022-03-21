@@ -3,7 +3,10 @@ package com.beyond.nepplus_finalproject.Auth
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.beyond.nepplus_finalproject.MainActivity
 import com.beyond.nepplus_finalproject.R
@@ -36,6 +39,27 @@ class LogInActivity : BaseActivity() {
             val intent = Intent(mContext, SignUpActivity::class.java)
 
             startActivity(intent)
+        }
+        binding.btnFindingPw.setOnClickListener {
+            //auth.sendPasswordResetEmail()
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_find_pw, null)
+            val mBuilder = AlertDialog.Builder(mContext)
+                .setView(mDialogView)
+                .setTitle("기존에 로그인하던 아이디가 있습니다.")
+
+            val alertDialog = mBuilder.show()
+            alertDialog.findViewById<Button>(R.id.btn_findingPw)?.setOnClickListener {
+
+
+
+//                Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_LONG).show()
+
+//                startActivity(Intent(this, MainActivity::class.java))
+//                finish()
+
+            }
+
+
         }
 
 

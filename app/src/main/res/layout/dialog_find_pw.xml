@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/sellected_color"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:textColorHint="@color/white"
+        android:id="@+id/edt_FindPwEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="email"
+        style="@style/AuthEditText"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="2dp"/>
+    <Button
+        android:background="@android:color/transparent"
+        android:textSize="30dp"
+        android:id="@+id/btn_findingPw"
+        android:layout_margin="20dp"
+        android:text="Send Email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+
+
+
+
+</LinearLayout>

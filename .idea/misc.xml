@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/drawable/background.xml" value="0.1235" />
         <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/dialog_current_user_login.xml" value="0.264" />
+        <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/dialog_find_pw.xml" value="0.1125" />
+        <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/main_lv_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/New/NepPlus_FinalProject/app/src/main/res/layout/test_layout.xml" value="0.264" />
       </map>
     </option>
   </component>

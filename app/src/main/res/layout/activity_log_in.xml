@@ -95,6 +95,15 @@
             android:text="Sign up"
             android:layout_width="match_parent"
             android:layout_height="60dp"/>
+        <Button
+            android:background="@android:color/transparent"
+            android:textSize="30dp"
+            android:id="@+id/btn_findingPw"
+            android:layout_margin="20dp"
+            android:text="Find Pw"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
 
 
     </LinearLayout>

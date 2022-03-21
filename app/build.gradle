@@ -38,6 +38,7 @@ android {
 apply plugin: 'kotlin-kapt'
 
 dependencies {
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'com.airbnb.android:lottie:5.0.1'
 
