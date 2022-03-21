@@ -2,6 +2,7 @@ package com.beyond.nepplus_finalproject.inheritClass
 
 import android.content.Context
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,6 +10,9 @@ abstract class BaseActivity: AppCompatActivity() {
     lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState)
 
         mContext = this
