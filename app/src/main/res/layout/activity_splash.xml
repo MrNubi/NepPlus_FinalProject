@@ -5,65 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:background="@color/sellected_color"
+    tools:context=".SplashActivity">
 
-    <LinearLayout
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/emailArea"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="email"
-
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:background="#999999"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="0.5dp"/>
+        android:layout_marginTop="80dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+app:lottie_rawRes="@raw/lottie_cloud"></com.airbnb.lottie.LottieAnimationView>
 
 
-        <EditText
-            android:id="@+id/passwordArea"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:backgroundTint=""
-            android:inputType="textPassword"
-            android:hint="password"
-
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:background="#999999"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="0.5dp"/>
-
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_margin="20dp"
-            android:text="로그인하기"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-        <Button
-            android:id="@+id/btn_signIn"
-            android:layout_marginHorizontal="20dp"
-            android:text="회원 가입"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-
-    </LinearLayout>
 
 </LinearLayout>
 </layout>

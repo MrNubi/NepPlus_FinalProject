@@ -53,7 +53,7 @@ class SplashActivity : BaseActivity() {
 
                 val alertDialog = mBuilder.show()
                 alertDialog.findViewById<Button>(R.id.btn_yes)?.setOnClickListener {
-                    Toast.makeText(this, "수정 버튼을 눌렀습니다", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "로그인에 성공했습니다", Toast.LENGTH_LONG).show()
 
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
