@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
+    android:orientation="vertical"
     android:gravity="center"
-    android:orientation="vertical">
-
+    tools:context=".Auth.LogInActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,11 +16,11 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/emailArea"
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="email"
-
+            style="@style/AuthEditText"
             />
 
         <LinearLayout
@@ -32,13 +32,12 @@
 
 
         <EditText
-            android:id="@+id/passwordArea"
+            android:id="@+id/edt_pw"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint=""
             android:inputType="textPassword"
             android:hint="password"
-
+            style="@style/AuthEditText"
             />
 
         <LinearLayout
@@ -49,21 +48,22 @@
             android:layout_height="0.5dp"/>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_LogIn"
             android:layout_margin="20dp"
             android:text="로그인하기"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
 
         <Button
-            android:id="@+id/btn_signIn"
+            android:id="@+id/btn_SignIn"
             android:layout_marginHorizontal="20dp"
-            android:text="회원 가입"
+            android:text="회원가입"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
 
 
     </LinearLayout>
+
 
 </LinearLayout>
 </layout>
