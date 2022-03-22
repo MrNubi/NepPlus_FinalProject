@@ -37,6 +37,7 @@
 <!--                    android:textStyle="italic"></TextView>-->
 
                 <ImageView
+                    android:id="@+id/img_pen"
                     android:src="@drawable/real_pen_white_pppng"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"></ImageView>
@@ -53,11 +54,13 @@
                 android:id="@+id/BET_Title1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:background="@android:color/transparent"
-                android:hint="제목을 입력해주세요"></EditText>
+                android:hint="     제목을 입력해주세요"></EditText>
 
             <LinearLayout
+                android:layout_marginHorizontal="20dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/white"></LinearLayout>
@@ -67,11 +70,12 @@
                 android:id="@+id/BET_contents1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:background="@android:color/transparent"
-                android:hint="내용을 입력해주세요"></EditText>
+                android:hint="     내용을 입력해주세요"></EditText>
 
             <LinearLayout
+                android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/white"></LinearLayout>
