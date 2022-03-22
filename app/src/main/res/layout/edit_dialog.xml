@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="입력해주세요"></TextView>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/EDT_editDialog"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="여기에 입력해 주세요"></EditText>
+
+    <Button
+        android:id="@+id/EDT_PUSH_BUTTON"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:text="입력"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

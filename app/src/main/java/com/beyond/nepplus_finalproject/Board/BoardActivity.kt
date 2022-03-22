@@ -47,7 +47,7 @@ class BoardActivity : BaseActivity() {
                 .child(key)
                 .setValue(LvModel(title, content, uid, time,img = R.drawable.nepp_logo,"1",key))
             imageUPload(key)
-            Toast.makeText(this, "게시글이 작성되었습니다", Toast.LENGTH_LONG).show()
+            Toast.makeText(mContext, "게시글이 작성되었습니다", Toast.LENGTH_LONG).show()
             finish()
         }
 
@@ -90,7 +90,7 @@ class BoardActivity : BaseActivity() {
 
         if(resultCode == RESULT_OK && requestCode == 100){
             val BEI1 = findViewById<ImageView>(R.id.BEI1)
-            Glide.with(this).load(data?.data).into(BEI1)
+            Glide.with(mContext).load(data?.data).into(BEI1)
 
         }
 
