@@ -59,16 +59,35 @@
 
     </LinearLayout>
     <LinearLayout
+        android:padding="20dp"
         android:id="@+id/linlay_LVcover"
         android:visibility="gone"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/bell_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"></ImageView>
-    <ListView
+        <LinearLayout
+            android:background="@drawable/background_radius_yellow"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
 
+            android:layout_height="60dp">
+
+            <EditText
+                android:id="@+id/edt_re_replyText"
+                android:hint=" 대댓글을 입력해주세요"
+                android:layout_marginLeft="10dp"
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"/>
+
+            <ImageView
+                android:id="@+id/btn_reReplyPush"
+                android:src="@drawable/btn_pen2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    <ListView
         android:id="@+id/LV_re_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></ListView>
