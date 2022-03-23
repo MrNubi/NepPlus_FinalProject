@@ -90,6 +90,6 @@
     <ListView
         android:id="@+id/LV_re_comment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="250dp"></ListView>
     </LinearLayout>
 </LinearLayout>
