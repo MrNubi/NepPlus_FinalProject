@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.beyond.nepplus_finalproject.R
 import com.beyond.nepplus_finalproject.adapter.CommentLVAdapter
+import com.beyond.nepplus_finalproject.adapter.ReReplyAdapter
 import com.beyond.nepplus_finalproject.data.CommentModel
+import com.beyond.nepplus_finalproject.data.ReReplyModel
 import com.beyond.nepplus_finalproject.databinding.ActivityBoardReReplyBinding
 import com.beyond.nepplus_finalproject.inheritClass.BaseActivity
 import com.beyond.nepplus_finalproject.util.FBA
@@ -21,8 +23,8 @@ class Board_Re_Reply_Activity : BaseActivity() {
     private lateinit var binding: ActivityBoardReReplyBinding
     private lateinit var title :String
     private lateinit var time :String
-    private lateinit var re_CommentLVAdapter: CommentLVAdapter
-    private val re_commentDataList = mutableListOf<CommentModel>()
+    private lateinit var re_CommentLVAdapter: ReReplyAdapter
+    private val re_commentDataList = mutableListOf<ReReplyModel>()
 
     private lateinit var key:String
 
@@ -72,7 +74,7 @@ class Board_Re_Reply_Activity : BaseActivity() {
         }
         //대댓글 입력 버튼
 
-        re_CommentLVAdapter = CommentLVAdapter(re_commentDataList)
+        re_CommentLVAdapter = ReReplyAdapter(re_commentDataList)
         binding.reCommentLV.adapter = re_CommentLVAdapter
 
 
@@ -81,11 +83,9 @@ class Board_Re_Reply_Activity : BaseActivity() {
 
 
     override fun SetupEvents() {
-        TODO("Not yet implemented")
     }
 
     override fun setValues() {
-        TODO("Not yet implemented")
     }
     fun getCommentData(key : String, Time : String){
         //Firebase에서 데이터 긁어오기
@@ -98,7 +98,7 @@ class Board_Re_Reply_Activity : BaseActivity() {
 
                 for (dataModel in dataSnapshot.children) {
 
-                    val item = dataModel.getValue(CommentModel::class.java)
+                    val item = dataModel.getValue(ReReplyModel::class.java)
                     re_commentDataList.add(item!!)
 
                 }

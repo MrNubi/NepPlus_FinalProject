@@ -1,12 +1,17 @@
 package com.beyond.nepplus_finalproject.adapter
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
+import com.beyond.nepplus_finalproject.Board.Board_Re_Reply_Activity
+import com.beyond.nepplus_finalproject.Board.BoardinnerActivity
 import com.beyond.nepplus_finalproject.R
 import com.beyond.nepplus_finalproject.data.CommentModel
 import com.beyond.nepplus_finalproject.data.ReReplyModel
@@ -57,6 +62,19 @@ class CommentLVAdapter(val commentList : MutableList<CommentModel>) : BaseAdapte
                 var rereDataList = mutableListOf<ReReplyModel>()
                 var rereAdapter = ReReplyAdapter(rereDataList)
                 LVReReply?.adapter = rereAdapter
+                LVReReply?.setOnItemClickListener { adapterView, view, i, l ->
+                    val mintent = Intent(context, Board_Re_Reply_Activity::class.java)
+            mintent.putExtra("Commenttitle", commentList[position].commentTitle.toString())
+            mintent.putExtra("Commenttime", commentList[position].commentCreatedTime.toString())
+            mintent.putExtra("key",commentList[position].key)
+            Log.d("ToReRepltBoard", commentList[position].toString())
+            context.startActivity(mintent.addFlags(FLAG_ACTIVITY_NEW_TASK))
+
+
+
+                }
+
+
                 val ttime = commentList[position].commentCreatedTime
                 var ttime2 = ttime.split(".").toString()
                 var ttime3 = ttime.split(".")[0]
@@ -79,7 +97,7 @@ class CommentLVAdapter(val commentList : MutableList<CommentModel>) : BaseAdapte
                             rereDataList.add(item!!)
 
                         }
-
+                        rereDataList.reverse()
                         rereAdapter.notifyDataSetChanged()
 
 
@@ -92,6 +110,8 @@ class CommentLVAdapter(val commentList : MutableList<CommentModel>) : BaseAdapte
                 FBRef.re_commentRef.child(commentList[position].key).child(TT).addValueEventListener(postListener)
                 LVlayout?.isVisible = true
                 btnShow.text = "댓글 접기"
+
+
             }//else
 
         }//btnClickListener
