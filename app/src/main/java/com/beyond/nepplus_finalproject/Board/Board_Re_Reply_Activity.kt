@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.beyond.nepplus_finalproject.R
 import com.beyond.nepplus_finalproject.adapter.CommentLVAdapter
 import com.beyond.nepplus_finalproject.adapter.ReReplyAdapter
+import com.beyond.nepplus_finalproject.adapter.ReReplyAreaAdapter
 import com.beyond.nepplus_finalproject.data.CommentModel
 import com.beyond.nepplus_finalproject.data.ReReplyModel
 import com.beyond.nepplus_finalproject.databinding.ActivityBoardReReplyBinding
@@ -23,7 +24,7 @@ class Board_Re_Reply_Activity : BaseActivity() {
     private lateinit var binding: ActivityBoardReReplyBinding
     private lateinit var title :String
     private lateinit var time :String
-    private lateinit var re_CommentLVAdapter: ReReplyAdapter
+    private lateinit var re_CommentLVAdapter: ReReplyAreaAdapter
     private val re_commentDataList = mutableListOf<ReReplyModel>()
 
     private lateinit var key:String
@@ -74,7 +75,7 @@ class Board_Re_Reply_Activity : BaseActivity() {
         }
         //대댓글 입력 버튼
 
-        re_CommentLVAdapter = ReReplyAdapter(re_commentDataList)
+        re_CommentLVAdapter = ReReplyAreaAdapter(re_commentDataList)
         binding.reCommentLV.adapter = re_CommentLVAdapter
 
 

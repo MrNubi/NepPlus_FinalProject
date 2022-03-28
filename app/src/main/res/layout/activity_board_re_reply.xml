@@ -14,9 +14,7 @@
         android:layout_height="match_parent">
 
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,11 +85,11 @@
 
                 <TextView
                     android:id="@+id/REReplyTime"
-
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="title"
+                    android:layout_height="30dp"
+                    android:gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:text="time"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -104,12 +102,13 @@
                 <ListView
                     android:id="@+id/re_commentLV"
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+
+                    android:layout_height="340dp"
+
                     />
 
             </LinearLayout>
 
-        </ScrollView>
 
         <LinearLayout
             android:background="@drawable/background_radius_yellow"
