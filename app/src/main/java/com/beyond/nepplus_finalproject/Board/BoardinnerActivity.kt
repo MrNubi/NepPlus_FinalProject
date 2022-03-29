@@ -68,7 +68,7 @@ class BoardinnerActivity : BaseActivity() {
                     val item = dataModel.getValue(CommentModel::class.java)
                     commentDataList.add(item!!)
                 }
-
+                commentDataList.reverse()
                 commentAdapter.notifyDataSetChanged()
 
 

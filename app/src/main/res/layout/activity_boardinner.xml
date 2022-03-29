@@ -30,6 +30,9 @@
                     android:layout_height="60dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/background"
+                        android:backgroundTint="@color/sellected_color"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -46,12 +49,14 @@
                             android:gravity="center"/>
 
                         <ImageView
+
+                            android:layout_margin="20dp"
+                            android:layout_marginRight="10dp"
                             android:id="@+id/boardSettingIcon"
                             android:visibility="invisible"
-                            android:layout_width="20dp"
-                            android:layout_height="40dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:src="@drawable/main_menu"
-                            android:layout_margin="10dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
