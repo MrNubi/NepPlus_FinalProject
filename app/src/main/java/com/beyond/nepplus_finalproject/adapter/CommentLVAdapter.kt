@@ -51,14 +51,16 @@ class CommentLVAdapter(val commentList : MutableList<CommentModel>) : BaseAdapte
         val LVReReply = view?.findViewById<ListView>(R.id.LV_re_comment)
 
         title!!.text = commentList[position].commentTitle
+        title!!.maxLines = 1
         time!!.text = commentList[position].commentCreatedTime
         btnShow?.setOnClickListener {
             var k = LVlayout?.isVisible
 
             if (k == true) {
                 LVlayout?.isVisible = false
-                btnShow.text = "댓글 펴기"
+                btnShow.text = "대댓글"
             } else {
+                title!!.maxLines = 100
                 var rereDataList = mutableListOf<ReReplyModel>()
                 var rereAdapter = ReReplyAdapter(rereDataList)
                 LVReReply?.adapter = rereAdapter

@@ -1,7 +1,6 @@
 package com.beyond.nepplus_finalproject.Board
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,14 +11,16 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.beyond.nepplus_finalproject.R
 import com.beyond.nepplus_finalproject.adapter.CommentLVAdapter
+import com.beyond.nepplus_finalproject.adapter.ReReplyAreaAdapter
 import com.beyond.nepplus_finalproject.data.BoardModel
 import com.beyond.nepplus_finalproject.data.CommentModel
-import com.beyond.nepplus_finalproject.databinding.ActivityBoardinnerBinding
+import com.beyond.nepplus_finalproject.data.ReReplyModel
+import com.beyond.nepplus_finalproject.databinding.ActivityBoardReReplyBinding
+import com.beyond.nepplus_finalproject.databinding.ActivityCommentMoreBinding
 import com.beyond.nepplus_finalproject.inheritClass.BaseActivity
 import com.beyond.nepplus_finalproject.util.FBA
 import com.beyond.nepplus_finalproject.util.FBRef
 import com.bumptech.glide.Glide
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -27,27 +28,27 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.lang.Exception
 
-class BoardinnerActivity : BaseActivity() {
+class CommentMoreActivity: BaseActivity() {
 
-    private val TAG = BoardinnerActivity::class.java.simpleName
-
-
-
-    private lateinit var key:String
-
+    private lateinit var binding: ActivityCommentMoreBinding
+    private lateinit var title :String
+    private lateinit var time :String
     private val commentDataList = mutableListOf<CommentModel>()
 
     private lateinit var commentAdapter : CommentLVAdapter
 
-    private lateinit var binding: ActivityBoardinnerBinding
+    private lateinit var key:String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding= DataBindingUtil.setContentView(this, R.layout.activity_boardinner)
+        setContentView(R.layout.activity_board_re_reply)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_comment_more)
+
         setValues()
         SetupEvents()
         key = intent.getStringExtra("key").toString()
-        getBoardData(key)
-        getImageData(key)
+
         getCommentData(key)
 
 
@@ -75,7 +76,7 @@ class BoardinnerActivity : BaseActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
+                Log.w("TAG", "loadPost:onCancelled", databaseError.toException())
             }
         }
         FBRef.commentRef.child(key).addValueEventListener(postListener)
@@ -90,14 +91,14 @@ class BoardinnerActivity : BaseActivity() {
             .push()
             .setValue(
                 CommentModel(
-                    binding.commentArea.text.toString(),
+                    binding.reCommentArea.text.toString(),
                     FBA.getTime(),
                     key
                 )
             )
 
         Toast.makeText(mContext, "댓글 입력 완료", Toast.LENGTH_SHORT).show()
-        binding.commentArea.setText("")
+        binding.reCommentArea.setText("")
 
     }
 
@@ -129,75 +130,8 @@ class BoardinnerActivity : BaseActivity() {
 
     }
 
-    private fun getImageData(key : String){
-
-        // Reference to an image file in Cloud Storage
-        val storageReference = Firebase.storage.reference.child(key + ".png")
-
-        // ImageView in your Activity
-        val imageViewFromFB = binding.getImageArea
-
-        storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
-            if(task.isSuccessful) {
-
-                Glide.with(mContext)
-                    .load(task.result)
-                    .into(imageViewFromFB)
-
-            } else {
-
-                binding.getImageArea.isVisible = false
-            }
-        })
 
 
-    }
-
-
-    private fun getBoardData(key : String){
-
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                try {
-
-                    val dataModel = dataSnapshot.getValue(BoardModel::class.java)
-                    Log.d(TAG, dataModel!!.title)
-
-                    binding.titleArea.text = dataModel!!.title
-                    binding.textArea.text = dataModel!!.content
-                    binding.timeArea.text = dataModel!!.time
-
-                    val myUid = FBA.getUid()
-                    val writerUid = dataModel.uid
-
-                    if(myUid.equals(writerUid)){
-                        Log.d(TAG, "내가 쓴 글")
-                        binding.boardSettingIcon.isVisible = true
-                    } else {
-                        Log.d(TAG, "내가 쓴 글 아님")
-                    }
-
-                } catch (e : Exception){
-
-                    Log.d(TAG, "삭제완료")
-
-                }
-
-
-
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
-            }
-        }
-        FBRef.boardRef.child(key).addValueEventListener(postListener)
-
-
-
-    }
     override fun setValues() {
         commentAdapter = CommentLVAdapter(commentDataList)
         binding.commentLV.adapter = commentAdapter
@@ -207,17 +141,7 @@ class BoardinnerActivity : BaseActivity() {
         binding.boardSettingIcon.setOnClickListener {
             showDialog()
         }
-        binding.commentBtn.setOnClickListener {
-            insertComment(key)
 
-        }
-        binding.btnBoardInnerMore.setOnClickListener {
-            val intent = Intent(mContext, CommentMoreActivity::class.java)
-
-            intent.putExtra("key",key)
-
-            startActivity(intent)
-        }
 //        binding.commentLV.setOnItemClickListener { parent, view, position, id ->
 //            val intent = Intent(mContext, Board_Re_Reply_Activity::class.java)
 //            intent.putExtra("Commenttitle", commentDataList[position].commentTitle.toString())

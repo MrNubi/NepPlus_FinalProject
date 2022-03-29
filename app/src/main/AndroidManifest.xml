@@ -16,6 +16,9 @@
             android:name=".Board.BoardEditActivity"
             android:exported="false" />
         <activity
+            android:name=".Board.CommentMoreActivity"
+            android:exported="false" />
+        <activity
             android:name=".Board.Board_Re_Reply_Activity"
             android:exported="false" />
         <activity
