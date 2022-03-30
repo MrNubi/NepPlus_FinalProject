@@ -103,7 +103,7 @@ class Board_Re_Reply_Activity : BaseActivity() {
                     re_commentDataList.add(item!!)
 
                 }
-
+                re_commentDataList.reverse()
                 re_CommentLVAdapter.notifyDataSetChanged()
 
 

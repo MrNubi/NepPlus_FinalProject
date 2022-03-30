@@ -204,6 +204,17 @@ class BoardinnerActivity : BaseActivity() {
     }
 
     override fun SetupEvents() {
+        binding.getImageArea.setOnClickListener {
+
+            binding.getImageArea.isVisible = false
+            binding.txtReturnImg.isVisible =true
+
+
+        }
+        binding.txtReturnImg.setOnClickListener {
+            binding.getImageArea.isVisible = true
+            binding.txtReturnImg.isVisible =false
+        }
         binding.boardSettingIcon.setOnClickListener {
             showDialog()
         }

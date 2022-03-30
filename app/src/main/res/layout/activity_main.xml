@@ -41,7 +41,7 @@
 
             <ImageView
                 android:layout_marginRight="30dp"
-                android:src="@drawable/bottom_nav_paper"
+                android:src="@drawable/user_profile_icon"
                 android:id="@+id/btn_Setting"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -67,12 +67,12 @@
 
         <ImageView
             android:id="@+id/btn_write"
-            android:layout_width="134dp"
+            android:layout_width="100dp"
             android:layout_height="119dp"
 
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/btnwrite"
+            android:src="@drawable/btn_pen2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"></ImageView>
 

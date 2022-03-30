@@ -85,6 +85,18 @@
                     android:layout_marginRight="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"/>
+        <TextView
+
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="이미지 펴기"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:id="@+id/txt_returnImg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"/>
 
 
         <TextView
