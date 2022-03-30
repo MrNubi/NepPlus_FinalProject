@@ -8,10 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.view.isVisible
 import com.beyond.nepplus_finalproject.R
 import com.beyond.nepplus_finalproject.data.LvModel
@@ -50,23 +47,12 @@ class MainLVadapter(val Lvlist : MutableList<LvModel>) : BaseAdapter() {
             view =
                 LayoutInflater.from(p2?.context).inflate(R.layout.main_lv_item, p2, false)
 
-
-
         }
-
-
         val content = view?.findViewById<TextView>(R.id.txt_mainLV_content)
         val time = view?.findViewById<TextView>(R.id.txt_mainLV_time)
         val title = view?.findViewById<TextView>(R.id.txt_mainLV_title)
         val img = view?.findViewById<ImageView>(R.id.img_MainLv)
-
-
-
-// ImageView in your Activity
-
-// Download directly from StorageReference using Glide
-// (See MyAppGlideModule for Loader registration)
-
+        val layout = view?.findViewById<LinearLayout>(R.id.layout_main_item_img)
 
 
         img!!.setImageResource(Lvlist[p0].img)
@@ -74,15 +60,12 @@ class MainLVadapter(val Lvlist : MutableList<LvModel>) : BaseAdapter() {
         content!!.text = Lvlist[p0].content
         title!!.text = Lvlist[p0].title
 
+//        title.setOnClickListener {
+//        Log.d("걍","$time")
+//                }
 
 
 
-        title.setOnClickListener {
-        Log.d("걍","$time")
-                }
-
-
-//0,13,26
         FBRef.boardRef.get().addOnSuccessListener {
             Log.i("햝", "Got value ${it.value.toString()}")
 
@@ -90,9 +73,43 @@ class MainLVadapter(val Lvlist : MutableList<LvModel>) : BaseAdapter() {
             var enum = p0*13
             var YY = ArrayList<String>()
             var T = Lvlist.size - 1
+            val storage = Firebase.storage
 
 
-    
+            val storageReference = Firebase.storage.reference.child(Lvlist[p0].key+".png")
+            Log.d("햝_KEY", Lvlist[p0].key+".png")
+
+            Log.d("캬옹", p0.toString())
+
+            // ImageView in your Activity
+            val imageViewFromFB = view?.findViewById<ImageView>(R.id.img_MainLv)
+
+            storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
+                if(task.isSuccessful) {
+                    img.isVisible = true
+                    Glide.with(view!!)
+                        .load(task.result)
+                        .into(img)
+
+                } else {
+
+                    layout?.isVisible = false
+                }
+            })
+
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+
+        return view!!
+    }
+
+
+}
+
+
+
+
 //            var TK2=TK.replace("{", "").replace("}", "").replace("=","")
 //            var TK2=TK.replace("{", "").replace("}", "").replace("=","")
 //            Log.i("햝_TK", "${TK}")
@@ -125,47 +142,6 @@ class MainLVadapter(val Lvlist : MutableList<LvModel>) : BaseAdapter() {
 
 
 
-            val storage = Firebase.storage
-
-
-            val storageReference = Firebase.storage.reference.child(Lvlist[p0].key+".png")
-            Log.d("햝_KEY", Lvlist[p0].key+".png")
-
-            Log.d("캬옹", p0.toString())
-
-            // ImageView in your Activity
-            val imageViewFromFB = view?.findViewById<ImageView>(R.id.img_MainLv)
-
-            storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task ->
-                if(task.isSuccessful) {
-
-                    Glide.with(view!!)
-                        .load(task.result)
-                        .into(img)
-
-                } else {
-
-                    img.isVisible = false
-                }
-            })
 
 
 
-
-
-        }.addOnFailureListener{
-            Log.e("firebase", "Error getting data", it)
-        }
-
-
-
-
-
-        return view!!
-
-
-
-    }
-
-
-}

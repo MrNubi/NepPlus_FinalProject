@@ -24,6 +24,8 @@ import java.io.ByteArrayOutputStream
 class BoardActivity : BaseActivity() {
 
     private lateinit var binding : ActivityBoardBinding
+
+    private var imgClicked = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board)
@@ -45,16 +47,18 @@ class BoardActivity : BaseActivity() {
             val A = FBRef.storageRef.child("${key}.png").downloadUrl
             FBRef.boardRef
                 .child(key)
-                .setValue(LvModel(title, content, uid, time,img = R.drawable.nepp_logo,"1",key))
-            imageUPload(key)
+                .setValue(LvModel(title, content, uid, time,"1",key))
+            if(imgClicked==true){imageUPload(key)}
             Toast.makeText(mContext, "게시글이 작성되었습니다", Toast.LENGTH_LONG).show()
             finish()
         }
 
         binding.BEI1.setOnClickListener {
+
             val key = FBRef.boardRef.push().key.toString()
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, 100)
+            imgClicked = true
         }
     }
 
